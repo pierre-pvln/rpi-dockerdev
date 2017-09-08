@@ -1,0 +1,35 @@
+##
+# Ingore the following files for Git
+##
+
+
+##
+# Git scripts
+##
+
+
+##
+# Command scripts not needed in linux 
+##
+
+
+##
+# windows files 
+##
+Thumbs.db
+
+
+##
+# output files
+##
+
+
+##
+# logging files
+##
+
+
+##
+# info files
+##
+
