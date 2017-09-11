@@ -14,4 +14,6 @@
 ::
 :: Setting folder holding the JOOMLA! archive(s)
 ::
-SET ARCHIVE_DIR=E:\multi\docker\rpi2\ozitdatzo\secrets\jpa
+SET LOCAL_ARCHIVE_DIR=E:\multi\docker\rpi2\ozitdatzo\secrets\jpa
+
+SET REMOTE_ARCHIVE_DIR=/tmp/archive

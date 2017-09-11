@@ -2,7 +2,7 @@
 :: Purpose:  copy files from rpi2
 :: Author:   pierre@pvln.nl
 :: Revision: 2017 08 15 - initial version
-::           2017 09 08 - folderstructure changed
+::           2017 09 08 - folderstructure changed and userid/pw as variable
 
 @ECHO off
 SETLOCAL ENABLEEXTENSIONS
@@ -85,15 +85,15 @@ IF %SERVER-HOSTNAME% NEQ localhost (
    SET connectport=2222
 )   
 
-echo %_PSCP% -scp -P %CONNECTPORT% -r -pw %HST_PW% %HST_ID%@%SERVER-HOSTNAME%:/tmp/archive/ %ARCHIVE_DIR%/
+echo %_PSCP% -scp -P %CONNECTPORT% -r -pw %HST_PW% %HST_ID%@%SERVER-HOSTNAME%:%REMOTE_ARCHIVE_DIR%/ %LOCAL_ARCHIVE_DIR%/
 
 :: Transfer archive files to server
-%_PSCP% -scp -P %CONNECTPORT% -r -pw %HST_PW% %HST_ID%@%SERVER-HOSTNAME%:/tmp/archive/ %ARCHIVE_DIR%/ 
+%_PSCP% -scp -P %CONNECTPORT% -r -pw %HST_PW% %HST_ID%@%SERVER-HOSTNAME%:%REMOTE_ARCHIVE_DIR%/ %LOCAL_ARCHIVE_DIR%/ 
 
 ECHO.
 ECHO *******************
 ECHO:
-ECHO Ga naar directory %ARCHIVE_DIR%
+ECHO Ga naar directory %LOCAL_ARCHIVE_DIR%
 ECHO:
 ECHO *******************
 GOTO CLEAN_EXIT
